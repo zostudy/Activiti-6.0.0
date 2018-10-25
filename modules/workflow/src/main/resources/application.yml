@@ -1,0 +1,43 @@
+spring:
+  freemarker:
+    check-template-location: false
+  jpa:
+    properties:
+      hibernate:
+        cache:
+          use_second_level_cache: false
+    open-in-view: true
+    generate-ddl: true
+    show-sql: true
+    #database-platform: org.hibernate.dialect.MySQLDialect
+  liquibase:
+    enabled: false
+    check-change-log-location: false
+  activiti:
+    check-process-definitions: false
+  aop:
+    proxy-target-class: false
+  datasource:
+     driver-class-name: com.mysql.jdbc.Driver
+     url: jdbc:mysql://127.0.0.1:3306/zos?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+     username: root
+     password: 01Studio
+     druid:
+       filter:
+         stat:
+           enabled: true
+         slf4j:
+           enabled: true
+  application:
+    name: workflow
+server:
+  port: 8080
+  servlet:
+    context-path: "/wf"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+logging:
+  file: logs/${spring.application.name}
