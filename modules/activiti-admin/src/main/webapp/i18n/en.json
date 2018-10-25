@@ -1,0 +1,932 @@
+{
+    "GENERAL": {
+        "YES": "是",
+        "NO": "否",
+        "ACTION": {
+            "LOGOUT": "退出",
+            "DISMISS-ALERT": "点击关闭此消息",
+            "RETURN-TO-LIST": "返回列表",
+            "SHOW-RESULTS": "显示 {{'GENERAL.RESULT-SIZES.' + resultSize.toString() | translate}} 条结果",
+            "REFRESH-LIST": "刷新列表",
+            "SORT-BY": "按 {{name | translate}}排序",
+            "CLEAR-FILTERS": "清除过滤器",
+            "CANCEL-AND-CLOSE": "取消并关闭",
+            "CANCEL": "取消",
+            "NEXT": "下一步",
+            "PREVIOUS": "上一步",
+            "CLOSE": "关闭",
+            "SHOWLICENSE": "许可证信息"
+        },
+        "TITLE": {
+            "MAIN": "Activiti管理员",
+            "ACTIONS": "操作",
+            "FILTERS": "过滤器"
+        },
+        "MENU": {
+            "DEPLOYMENTS": "部署",
+            "PROCESS-DEFINITIONS": "定义",
+            "PROCESS-INSTANCES": "实例",
+            "TASKS": "任务",
+            "JOBS": "工作",
+            "CONFIGURATION": "组态",
+            "CONFIGURATION-ENGINE": "引擎",
+            "CONFIGURATION-USERS": "配置用户",
+            "APPS": "应用程序"
+        },
+        "RESULT-SIZES": {
+            "10": "10",
+            "25": "25",
+            "50": "50",
+            "100": "100",
+            "100000000": "所有"
+        }
+    },
+    "PROCESS-DEFINITION": {
+        "ID": "ID:",
+        "NAME": "名称:",
+        "VERSION": "版本:",
+        "DESCRIPTION": "描述:",
+        "KEY": "键:",
+        "CATEGORY": "类别:",
+        "SUSPENDED": "暂停:",
+        "DEPLOYMENT": "部署:",
+        "TENANT": "承租人:",
+        "START-FORM-DEFINED": "开始表单定义:",
+        "GRAPHICAL-NOTATION-DEFINED": "图形表示法已定义:",
+        "PROCESS-INSTANCES-SIZE": "定义中有{{total}}个流程实例在运行",
+        "PROCESS-INSTANCES-SHOWING": ",显示最近开始的{{size}}",
+        "PROCESS-INSTANCES-EMPTY": "定义没有任何流程实例在运行",
+        "JOBS-SIZE": "定义中有{{total}}个工作正在运行",
+        "JOBS-EMPTY": "定义没有工作正在运行",
+        "DECISION-TABLES-SIZE": "定义包含{{total}}个决策表。",
+        "DECISION-TABLES-EMPTY": "定义没有决策表。",
+        "FORMS-SIZE": "定义有{{total}}个表格。",
+        "FORMS-EMPTY": "定义没有表格。",
+        "TITLE": {
+            "PROCESS-INSTANCES": "流程实例",
+            "JOBS": "工作",
+            "DECISION-TABLES": "决策表",
+            "FORMS": "表格"
+        },
+        "ACTION": {
+            "EDIT-CATEGORY": "编辑类别",
+            "SHOW-ALL-JOBS": "显示所有工作",
+            "SHOW-ALL-PROCESSES": "显示所有流程",
+            "SHOW-DIAGRAM": "显示流程图"
+        },
+        "POPUP": {
+            "EDIT-CATEGORY": {
+                "TITLE": "编辑类别的定义",
+                "MESSAGE": "定义的初始类别是从BPMN 2.0 XML中的targetNameSpace属性填充的，但可以在部署后进行更改。",
+                "CATEGORY": "类别",
+                "CATEGORY-PLACEHOLDER": "输入一个类别",
+                "CONFIRM": "更新类别"
+            },
+            "SHOW-PROCESS-MODEL": {
+                "TITLE": "流程图"
+            }
+        }
+    },
+    "PROCESS-DEFINITIONS": {
+        "LIST-MESSAGE": "显示总共{{total}}个匹配定义的{{size}}结果。",
+        "LIST-MESSAGE-EMPTY": "没有匹配的流程定义.",
+        "FILTER": {
+            "NAME": "名称 (区分大小写)",
+            "KEY": "键 (区分大小写)",
+            "DEPLOYMENT-ID": "部署 ID",
+            "TENANT-ID": "承租人 ID",
+            "LATEST": "最新版本",
+            "LATEST-HELP": "只显示最新版本"
+        },
+        "TITLE": {
+            "MAIN": "流程定义"
+        },
+        "SORT": {
+            "ID": "ID",
+            "NAME": "名称",
+            "VERSION": "版本"
+        },
+        "HEADER": {
+            "ID": "ID",
+            "NAME": "名称",
+            "VERSION": "版本",
+            "KEY": "键",
+            "TENANT": "承租人"
+        },
+        "ACTIONS": {
+            "UPLOAD-FROM-MODELER": "从Activiti编辑器上传"
+        },
+        "POPUP": {
+            "UPLOAD-FROM-MODELER": {
+                "NAME": "用户名",
+                "PASSWORD": "密码",
+                "ERROR": "我们无法联系编辑",
+                "UNAUTHORIZED": "无效证件",
+                "UPLOAD-DESCRIPTION": "流程模型现在将被提取并部署到当前活动的Activiti集群。 为部署包选择一个合适的名称。"
+            }
+        }
+    },
+    "PROCESS-INSTANCE": {
+        "ID": "ID:",
+        "NAME": "名称:",
+        "DESCRIPTION": "描述:",
+        "BUSINESS-KEY": "商业钥匙:",
+        "TENANT-ID": "承租人:",
+        "STATUS": "状态:",
+        "STATUS-ACTIVE": "激活",
+        "STATUS-COMPLETED": "已完成",
+        "ACTIVITY-ID-STARTED": "活动ID已启动：",
+        "ACTIVITY-ID-ENDED": "完成活动：",
+        "DELETE-REASON": "删除原因：",
+        "STARTED-BY": "发起人：",
+        "END-TIME": "时间结束：",
+        "DURATION": "持续时间：",
+        "SUPER-PROCESS-INSTANCE-ID": "超级流程实例ID：",
+        "TASKS-SIZE": "该流程实例包含{{total}}任务。",
+        "TASKS-EMPTY": "该流程实例没有任务。",
+        "VARIABLES-SIZE": "此流程实例包含{{total}}个变量。",
+        "VARIABLES-EMPTY": "该流程实例没有变量。",
+        "JOBS-SIZE": "此流程实例包含{{total}}个工作。",
+        "JOBS-EMPTY": "该流程实例没有工作。",
+        "SUBPROCESSES-SIZE": "此流程实例包含{{total}}子流程。",
+        "SUBPROCESSES-EMPTY": "该流程实例没有子流程。",
+        "DECISION-TABLES-SIZE": "该流程实例具有{{total}}个决策表。",
+        "DECISION-TABLES-EMPTY": "该流程实例没有决策表。",
+        "FORMS-SIZE": "该流程实例具有{{total}}提交的表单。",
+        "FORMS-EMPTY": "此流程实例没有提交表单。",
+        "TITLE": {
+            "TASKS": "任务",
+            "VARIABLES": "变量",
+            "JOBS": "工作",
+            "SUBPROCESSES": "子流程",
+            "DECISION-TABLES": "决策表",
+            "FORMS": "表格"
+        },
+        "ACTION": {
+            "DELETE": "删除流程实例",
+            "TERMINATE": "终止流程实例",
+            "SHOW-ALL-TASKS": "显示所有任务",
+            "SHOW-ALL-JOBS": "显示所有工作",
+            "SHOW-ALL-SUBPROCESSES": "显示所有子流程",
+            "SHOW-DIAGRAM": "显示流程图",
+            "TITLE-VARIABLES": "对选定变量的操作",
+            "DELETE-VARIABLE": "删除变量",
+            "UPDATE-VALUE": "更新变量",
+            "ADD-VARIABLE": "添加变量"
+        },
+        "POPUP": {
+            "DELETE": {
+                "TITLE": "删除流程实例",
+                "MESSAGE-DELETE": "您确定要删除流程实例吗？",
+                "MESSAGE-TERMINATE": "您确定要终止流程实例吗？",
+                "DELETE-REASON": "删除原因",
+                "DELETE-REASON-HELP": "输入一个可选的删除原因",
+                "CONFIRM-DELETE": "删除流程实例",
+                "CONFIRM-TERMINATE": "终止流程实例"
+            },
+            "SHOW-PROCESS-MODEL": {
+                "TITLE": "流程图"
+            },
+            "CREATE-VARIABLE": {
+                "TITLE": "创建变量",
+                "NAME": "变量名",
+                "TYPE": "Activiti变量类型",
+                "VALUE": "变量值",
+                "CREATE": "创建"
+            },
+            "UPDATE-VARIABLE": {
+                "TITLE": "更新变量'{{name}}'",
+                "NAME": "变量名",
+                "VALUE": "值",
+                "CHECKED": "真",
+                "UNCHECKED": "假",
+                "DATE-HELP": "ISO-8601 format (example : 2016-01-28T23:00:00Z)",
+                "ACTION-UPDATE": "更新"
+            },
+            "DELETE-VARIABLE": {
+                "TITLE": "删除变量'{{name}}",
+                "MESSAGE": "你确定要删除这个变量吗？",
+                "DELETE": "删除"
+            }
+        }
+    },
+    "PROCESS-INSTANCES": {
+        "TITLE": "流程实例",
+        "LIST-MESSAGE": "显示总共{{total}}个匹配流程实例的{{size}}结果。",
+        "LIST-MESSAGE-EMPTY": "没有匹配的流程实例.",
+        "FILTER": {
+            "NAME": "名称",
+            "PROCESS-DEFINITION": "流程定义",
+            "ALL-PROCESS-DEFINITIONS": "所有流程定义",
+            "BUSINESS-KEY": "商业钥匙",
+            "SUPER-PROCESS-INSTANCE-ID": "超级流程实例ID",
+            "STARTED-BEFORE": "开始之前",
+            "STARTED-AFTER": "开始之后",
+            "ENDED-BEFORE": "截止之前",
+            "ENDED-AFTER": "截止之后",
+            "VARIABLE": "变量",
+            "VARIABLE-NAME": "变量名",
+            "VARIABLE-VALUE": "变量值",
+            "VARIABLE-BOOLEAN-VALUE": "布尔值：{{value}}",
+            "TENANT-ID": "承租人标识符"
+        },
+        "SORT": {
+            "ID": "ID",
+            "START-TIME": "开始时间"
+        },
+        "HEADER": {
+            "ID": "ID",
+            "NAME": "名称",
+            "BUSINESS-KEY": "商业钥匙",
+            "PROCESS-DEFINITION": "流程定义",
+            "CREATE-TIME": "创建",
+            "END-TIME": "截止",
+            "STATUS": "状态"
+        }
+    },
+    "TASK": {
+        "ID": "ID:",
+        "NAME": "名称:",
+        "STATUS": "状态:",
+        "STATUS-COMPLETED": "完成",
+        "STATUS-ACTIVE": "活动",
+        "DESCRIPTION": "描述:",
+        "TASK-DEFINITION-KEY": "定义键：",
+        "FORM-KEY": "表格关键字：",
+        "PRIORITY": "优先:",
+        "DELEGATION-STATE": "代表团状态：",
+        "CATEGORY": "类别:",
+        "TENANT-ID": "承租人:",
+        "PARENT": "父任务：",
+        "ASSIGNEE": "代理人:",
+        "OWNER": "所有者:",
+        "START-DATE": "开始日期：",
+        "DUE-DATE": "截止日期:",
+        "END-DATE": "结束日期：",
+        "DELETE-REASON": "删除原因：",
+        "PROCESS-INSTANCE": "流程实例",
+        "PROCESS-DEFINITION": "流程定义",
+        "EXECUTION-ID": "执行ID：",
+        "SUBTASKS-MESSAGE": "此任务包含{{total}}子任务，显示{{size}}。",
+        "SUBTASKS-MESSAGE-EMPTY": "这个任务没有子任务。",
+        "VARIABLES-MESSAGE": "此任务包含{{size}}个变量。",
+        "VARIABLES-MESSAGE-EMPTY": "这个任务没有变量。",
+        "IDENTITY-LINKS-MESSAGE": "此任务具有{{size}}身份链接。",
+        "IDENTITY-LINKS-MESSAGE-EMPTY": "此任务没有身份链接。",
+        "ACTION": {
+            "EDIT": "编辑任务",
+            "ASSIGN-CLAIM": "分配/索赔任务",
+            "DELEGATE": "委托任务",
+            "RESOLVE": "解决任务",
+            "COMPLETE": "完成任务",
+            "DELETE": "删除任务",
+            "SHOW-ALL-SUBTASKS": "显示所有子任务",
+            "SHOW-SUBMITTED-FORM": "显示提交的表单"
+        },
+        "TITLE": {
+            "SUBTASKS": "子任务",
+            "IDENTITY-LINKS": "身份链接",
+            "VARIABLES": "变量"
+        },
+        "POPUP": {
+            "ASSIGN": {
+                "TITLE": "分配任务",
+                "MESSAGE": "你确定要分配任务吗？",
+                "NEW-ASSIGNEE": "新代理人",
+                "NEW-ASSIGNEE-HELP": "如果您想将任务分配给任何人，请将受理人字段留空。",
+                "CONFIRM": "分配任务"
+            },
+            "COMPLETE": {
+                "TITLE": "完成任务",
+                "MESSAGE": "你确定要完成任务吗？",
+                "CONFIRM": "完成任务"
+            },
+            "DELEGATE": {
+                "TITLE": "委托任务",
+                "MESSAGE": "你确定你想委派任务吗？",
+                "CONFIRM": "委托任务",
+                "DELEGATE-TO": "用户委派给"
+            },
+            "RESOLVE": {
+                "TITLE": "解决任务",
+                "MESSAGE": "你确定要解决任务吗？",
+                "CONFIRM": "解决任务"
+            },
+            "DELETE": {
+                "TITLE": "删除任务",
+                "MESSAGE": "你确定要删除任务吗？",
+                "CONFIRM": "删除任务"
+            },
+            "EDIT": {
+                "TITLE": "编辑任务",
+                "CONFIRM": "更新任务",
+                "NAME": "名称",
+                "DESCRIPTION": "描述",
+                "PRIORITY": "优先",
+                "CATEGORY": "类别",
+                "ASSIGNEE": "代理人",
+                "OWNER": "所有者",
+                "DUE-DATE": "截止日期"
+            }
+        }
+    },
+    "TASKS": {
+        "TITLE": "任务",
+        "LIST-MESSAGE": "显示总共{{total}}个匹配任务中的{{size}}结果。",
+        "LIST-MESSAGE-EMPTY": "没有匹配的任务.",
+        "FILTER": {
+            "NAME": "名称 (区分大小写)",
+            "ASSIGNEE": "代理人 (区分大小写)",
+            "STATUS": "状态",
+            "STATUS-ANY": "任何状态",
+            "STATUS-ACTIVE": "主动任务",
+            "STATUS-COMPLETE": "完成的任务",
+            "PROCESS-INSTANCE-ID": "流程实例ID",
+            "TENANT-ID": "承租人标识符",
+            "OWNER": "所有者(区分大小写)",
+            "PARENT-TASK-ID": "父任务ID",
+            "CREATED-BEFORE": "创建前",
+            "CREATED-AFTER": "创建后",
+            "ENDED-BEFORE": "截止前",
+            "ENDED-AFTER": "截止后",
+            "DUE-BEFORE": "到期前",
+            "DUE-AFTER": "到期后",
+            "TASK-VARIABLE": "任务局部变量",
+            "PROCESS-VARIABLE": "流程变量",
+            "VARIABLE-NAME": "变量名",
+            "VARIABLE-VALUE": "变量值",
+            "VARIABLE-BOOLEAN-VALUE": "布尔值：{{value}}"
+        },
+        "SORT": {
+            "NAME": "名称",
+            "DUE-DATE": "截止日期",
+            "START-TIME": "开始时间",
+            "END-TIME": "截止时间",
+            "PRIORITY": "优先"
+        },
+        "HEADER": {
+            "ID": "ID",
+            "NAME": "名称",
+            "ASSIGNEE": "代理人",
+            "OWNER": "所有者",
+            "CREATE-TIME": "创建",
+            "END-TIME": "截止",
+            "PRIORITY": "优先"
+        }
+    },
+    "DEPLOYMENTS": {
+        "TITLE": "部署",
+        "LIST-MESSAGE": "显示总共{{total}}个匹配部署的{{size}}结果。",
+        "LIST-MESSAGE-EMPTY": "没有匹配的部署.",
+        "FILTER": {
+            "NAME": "名称 (区分大小写)",
+            "TENANTID": "承租人标识符 (区分大小写)"
+        },
+        "SORT": {
+            "ID": "ID",
+            "NAME": "名称"
+        },
+        "HEADER": {
+            "ID": "ID",
+            "NAME": "名称",
+            "DEPLOY-TIME": "部署时间",
+            "CATEGORY": "类别",
+            "TENANT": "承租人"
+        },
+        "ACTION": {
+            "UPLOAD": "上传流程或软件包",
+            "DELETE": "删除部署"
+        },
+        "POPUP": {
+            "UPLOAD": {
+                "DESCRIPTION": "选择.bpmn，.bpmn20.xml流程文件以部署或上载包含在.zip或.bar文件中的一系列流程（包含资产）。",
+                "WARNING": "上传流程只能通过Activiti Core Engine，而不能通过Activiti 6 UI实例进行。应该使用与个人或组共享的应用部署Activiti 6 UI中的流程。",
+                "DROPZONE": "或者在这里放置一个文件",
+                "NO-DROP": "浏览器不支持文件丢失",
+                "CANCEL-UPLOAD": "取消上传",
+                "ERROR": "无法上传此文件"
+            },
+            "DELETE": {
+                "CONFIRM-MESSAGE": "删除部署 '{{name}}'?"
+            }
+        }
+    },
+    "DEPLOYMENT": {
+        "ID": "ID:",
+        "NAME": "名称:",
+        "TIME": "部署时间:",
+        "CATEGORY": "类别:",
+        "TENANTID": "承租人标识符:",
+        "DEFINITIONS-MESSAGE": "此部署包含{{total}}流程定义，显示{{size}}。",
+        "DEFINITIONS-MESSAGE-EMPTY": "此部署没有流程定义。",
+        "TITLE": {
+            "DEFINITIONS": "流程定义",
+            "RESOURCES": "资源"
+        },
+        "ACTION": {
+            "SHOW-ALL-DEFINITIONS": "显示所有的定义"
+        }
+    },
+    "JOB": {
+        "TITLE": {
+            "MAIN": "工作{{id}}",
+            "EXCEPTION": "例外"
+        },
+        "ACTIONS": {
+            "EXECUTE": "执行工作",
+            "DELETE": "删除工作"
+        },
+        "POPUP": {
+            "DELETE-JOB": {
+                "TITLE": "删除工作 '{{id}}'",
+                "MESSAGE": "你确定要删除工作{{id}}吗?",
+                "CONFIRM": "删除工作"
+            }
+        },
+        "ID": "ID:",
+        "EXECUTION-ID": "执行ID：",
+        "PROCESS-INSTANCE": "流程实例:",
+        "PROCESS-DEFINITION": "流程定义:",
+        "DUEDATE": "截止日期:",
+        "RETRIES-LEFT": "重试：",
+        "TENANT-ID": "承租人:"
+    },
+    "JOBS": {
+        "TITLE": "工作",
+        "LIST-MESSAGE": "显示{{total}}个匹配工作中的{{size}}结果。",
+        "LIST-MESSAGE-EMPTY": "没有匹配的工作.",
+        "FILTER": {
+            "PROCESS-DEFINITION": "流程定义",
+            "ALL-PROCESS-DEFINITIONS": "所有流程定义",
+            "PROCESS-INSTANCE-ID": "流程定义ID",
+            "TENANT-ID": "承租人标识符",
+            "DUE-BEFORE": "截止前",
+            "DUE-AFTER": "截止后",
+            "EXCEPTION": "例外",
+            "EXCEPTION-HELP": "只显示有例外的工作"
+        },
+        "SORT": {
+            "ID": "工作 ID",
+            "DUE-DATE": "截止日期",
+            "PROCESS-INSTANCE-ID": "流程实例ID"
+        },
+        "HEADER": {
+            "ID": "ID",
+            "DUE-DATE": "截止日期",
+            "PROCESS-DEFINITION": "流程定义",
+            "RETRIES": "重试",
+            "EXCEPTION": "例外"
+        }
+    },
+    "LOGIN": {
+        "TITLE": "登录",
+        "USERNAME": "用户名",
+        "USERNAME-PLACEHOLDER": "输入用户名",
+        "PASSWORD": "密码",
+        "PASSWORD-PLACEHOLDER": "输入密码",
+        "ACTION": {
+            "CONFIRM": "登录"
+        }
+    },
+    "USER": {
+        "POPUP": {
+            "CHANGE-PASSWORD": {
+                "TITLE": "更改“{{login}}”的密码",
+                "OLD-PASSWORD": "老密码",
+                "NEW-PASSWORD": "新密码",
+                "CONFIRM": "修改密码"
+            },
+            "DELETE": {
+                "TITLE": "删除用户{{login}}",
+                "MESSAGE": "您确定要删除用户'{{login}}'吗？",
+                "CONFIRM": "删除用户"
+            },
+            "EDIT": {
+                "TITLE": "编辑用户{{login}}",
+                "LOGIN": "登录名",
+                "EMAIL": "邮箱",
+                "FIRSTNAME": "名",
+                "LASTNAME": "姓",
+                "CONFIRM": "更新用户"
+            },
+            "NEW": {
+                "TITLE": "创建新用户",
+                "LOGIN": "登录名",
+                "EMAIL": "邮箱",
+                "FIRSTNAME": "名",
+                "LASTNAME": "姓",
+                "PASSWORD": "密码",
+                "ADMIN": "拥有管理员权限",
+                "CONFIRM": "创建用户"
+            }
+        }
+    },
+    "USERS": {
+        "TITLE": "用户",
+        "ACTION": {
+            "EDIT": "编辑用户",
+            "NEW": "创建新用户",
+            "DELETE": "删除用户",
+            "CHANGE-PASSWORD": "更改密码"
+        },
+        "HEADER": {
+            "LOGIN": "登录名",
+            "FIRSTNAME": "名",
+            "LASTNAME": "姓",
+            "EMAIL": "邮箱",
+            "CLUSTER_USER": "集群用户"
+        }
+    },
+    "LICENSE": {
+        "POPUP": {
+            "TITLE": "许可证信息",
+            "HOLDER": "持有人",
+            "SUBJECT": "学科",
+            "PRODUCTKEY": "产品类别",
+            "GOODAFTERDATE": "许可证有效后",
+            "GOODBEFOREDATE": "许可证有效期至",
+            "NUMBER_OF_PROCESSES": "活动流程的数量",
+            "NUMBER_OF_ADMINS": "管理员用户数量",
+            "MULTI_TENANT": "多租户",
+            "DEFAULT_TENANT": "默认租户"
+        }
+    },
+    "CLUSTER": {
+        "NAME": "名称:",
+        "USER": "用户：",
+        "MASTER-MANDATORY": "主配置必需：",
+        "METRICS-SEND-INTERVAL": "公制发送间隔：",
+        "ENDPOINT-HELP": " 端口配置（每个集群只有一个）需要指向Activiti REST安装。此端口将用于检索和管理此应用程序的其他部分（例如部署，流程定义等）中使用的数据。",
+        "ENDPOINT-NAME": "名称:",
+        "ENDPOINT-DESCRIPTION": "描述:",
+        "ENDPOINT-ADDRESS": "服务器地址:",
+        "ENDPOINT-PORT": "服务器端口号:",
+        "ENDPOINT-CONTEXT-ROOT": "上下文根:",
+        "ENDPOINT-REST-ROOT": "REST根目录:",
+        "ENDPOINT-USERNAME": "用户名:",
+        "PROCESS-ENGINE-HELP": "本部分允许您为集群定义一个“主配置”。 启动时，集群中的所有实例都将使用此配置（如果集群配置jar位于类路径上或者设置了相应的属性）。 如果未设置，实例将使用其本地配置文件。",
+        "NO-MASTER-DEFINED": "没有定义主配置",
+        "ACTION": {
+            "SHOW-PASSWORD": "显示密码",
+            "EDIT-CLUSTER-CONFIG": "编辑集群配置",
+            "CREATE-CLUSTER-CONFIG": "创建新的集群",
+            "DELETE-CLUSTER-CONFIG": "删除集群配置",
+            "GENERATE-JAR": "生成集群配置jar",
+            "EDIT-ENDPOINT": "编辑Activiti REST端口",
+            "CHECK-ENDPOINT": "检查Activiti REST端口",
+            "SELECT-MASTER": "选择主配置",
+            "ADD-CONFIGURATION": "添加主配置",
+            "EDIT-CONFIGURATION": "编辑主配置",
+            "DELETE-CONFIGURATION": "删除主配置"
+        },
+        "TITLE": {
+            "ENDPOINT": "端口配置"
+        },
+        "POPUP": {
+            "EDIT-ENDPOINT": {
+                "ENDPOINT-NAME": "名称",
+                "ENDPOINT-DESCRIPTION": "描述",
+                "ENDPOINT-ADDRESS": "服务器地址",
+                "ENDPOINT-PORT": "服务器端口号",
+                "ENDPOINT-CONTEXT-ROOT": "上下文根",
+                "ENDPOINT-REST-ROOT": "REST根目录",
+                "ENDPOINT-USERNAME": "用户名",
+                "ENDPOINT-PASSWORD": "密码",
+                "ENDPOINT-PASSWORD-HELP": "保留空白以保留当前密码",
+                "ENDPOINT-URL-PREVIEW": "网址预览",
+                "ACTION-CONFIRM": "保存端口配置",
+                "ERROR-401": "错误：凭据无效",
+                "ERROR-403": "错误：凭据或URL无效",
+                "ERROR-404": "错误：未找到网址",
+                "ERROR-500": "错误：服务器错误。 检查服务器日志。"
+            }
+        }
+    },
+    "APP-DEPLOYMENTS": {
+        "TITLE": "应用部署",
+        "LIST-MESSAGE": "显示{{total}}匹配应用部署中的{{size}}结果。",
+        "LIST-MESSAGE-EMPTY": "没有匹配的应用部署.",
+        "FILTER": {
+            "NAME": "名称",
+            "TENANTID": "承租人标识符",
+            "LATEST": "最新版本",
+            "LATEST-HELP": "只显示最新版本"
+        },
+        "SORT": {
+            "ID": "ID",
+            "NAME": "名称"
+        },
+        "HEADER": {
+            "ID": "ID",
+            "APP-DEFINITION-ID": "应用ID",
+            "DEPLOYMENT-ID": "流程部署ID",
+            "DMN-DEPLOYMENT-ID": "DMN部署ID",
+            "NAME": "名称",
+            "DEPLOY-TIME": "部署时间",
+            "DEPLOYED-BY": "部署通过",
+            "TENANT": "承租人 ID"
+        },
+        "ACTION": {
+            "UPLOAD": "上传和发布应用程序"
+        },
+        "POPUP": {
+            "UPLOAD": {
+                "DESCRIPTION": "选择一个.zip应用程序定义进行部署。",
+                "WARNING": "上传流程只能通过Activiti UI实例进行。",
+                "DROPZONE": "或者在这里放置一个文件",
+                "NO-DROP": "您的浏览器不支持文件放置",
+                "CANCEL-UPLOAD": "取消上传",
+                "ERROR": "无法上传此文件"
+            }
+        }
+    },
+    "APP-DEPLOYMENT": {
+        "APP-ID": "应用ID:",
+        "DEPLOYMENT-ID": "部署ID:",
+        "DMN-DEPLOYMENT-ID": "DMN部署ID:",
+        "DEPLOYED-BY": "部署：",
+        "DEPLOYED-ON": "部署在：",
+        "APP-NAME": "应用名称:",
+        "VERSION": "版本:",
+        "DESCRIPTION": "描述:",
+        "KEY": "键:",
+        "CATEGORY": "类别:",
+        "SUSPENDED": "暂停：",
+        "DEPLOYMENT": "部署:",
+        "TENANT-ID": "承租人 ID:",
+        "START-FORM-DEFINED": "开始表单定义：",
+        "GRAPHICAL-NOTATION-DEFINED": "图形表示法定义：",
+        "PROCESS-DEFINITIONS-SIZE": "应用定义包含{{total}}流程定义",
+        "PROCESS-DEFINITIONS-SHOWING": ",显示{{size}}流程定义",
+        "PROCESS-DEFINITIONS-EMPTY": "应用程序部署没有流程定义",
+        "DECISION-TABLES-SIZE": "应用程序部署包含{{total}}决策表",
+        "DECISION-TABLES-SHOWING": ", 显示{{size}}决策表",
+        "DECISION-TABLES-EMPTY": "应用程序部署没有决策表",
+        "FORMS-SIZE": "应用部署包含{{total}}个表单",
+        "FORMS-SHOWING": ", 显示{{size}}表单",
+        "FORMS-EMPTY": "应用程序部署没有表单",
+        "TITLE": {
+            "PROCESS-DEFINITIONS": "流程定义",
+            "DECISION-TABLES": "决策表",
+            "FORMS": "表格"
+        },
+        "ACTION": {
+            "EDIT-CATEGORY": "编辑类别",
+            "SHOW-ALL-PROCESS-DEFINITIONS": "显示所有流程定义",
+            "SHOW-ALL-DECISION-TABLES": "显示所有决策表",
+            "SHOW-ALL-FORMS": "显示所有表格",
+            "SHOW-DIAGRAM": "显示流程图"
+        },
+        "POPUP": {
+            "EDIT-CATEGORY": {
+                "TITLE": "编辑类别的定义",
+                "MESSAGE": "定义的初始类别是从BPMN 2.0 XML中的targetNameSpace属性填充的，但可以在部署后进行更改。",
+                "CATEGORY": "类别",
+                "CATEGORY-PLACEHOLDER": "输入一个类别",
+                "CONFIRM": "更新类别"
+            },
+            "SHOW-PROCESS-MODEL": {
+                "TITLE": "流程图"
+            }
+        }
+    },
+    "VARIABLES": {
+        "HEADER": {
+            "NAME": "名称",
+            "TYPE": "类别",
+            "VALUE": "值"
+        }
+    },
+    "IDENTITY-LINKS": {
+        "HEADER": {
+            "GROUP-ID": "组ID",
+            "TYPE": "类别",
+            "USER-ID": "用户ID"
+        }
+    },
+    "ALERT": {
+        "GENERAL": {
+            "HTTP-ERROR": "我们无法从服务器获取数据",
+            "AUTHENTICATION-ERROR": "您输入了无效的登录凭据"
+        },
+        "ENGINE": {
+            "ENDPOINT-UPDATED": "端口“{{name}}”已更新。",
+            "ENDPOINT-INVALID": "“{{name}}”的端口配置无效。",
+            "ENDPOINT-VALID": "端口有效，端口引擎：{{name}} - {{version}}"
+        },
+        "JOB": {
+            "DELETED": "作业“{{id}}”已成功删除。",
+            "EXECUTED": "作业“{{id}}”已成功执行。"
+        },
+        "PROCESS-INSTANCE": {
+            "DELETED": "流程实例“{{id}}”已成功删除。",
+            "TERMINATED": "流程实例“{{id}}”已成功终止。"
+        },
+        "TASK": {
+            "DELETED": "任务“{{id}}”已成功删除。",
+            "COMPLETED": "任务“{{id}}”已成功完成。",
+            "DELEGATED": "委托给用户{{user}}的任务“{{id}}”。",
+            "RESOLVED": "任务'{{id}}'已成功解决。",
+            "ASSIGNED": "任务'{{id}}'现在分配给{{user}}。",
+            "UNASSIGNED": "任务'{{id}}'现在未分配。",
+            "UPDATED": "任务'{{id}}'已成功更新。"
+        },
+        "USER": {
+            "DELETED": "用户'{{login}}'已成功删除。",
+            "UPDATED": "用户'{{login}}'已成功更新。",
+            "CREATED": "用户'{{login}}'创建。",
+            "PASSWORD-CHANGED": "'{{login}}'的密码已成功更改。"
+        },
+        "PROCESS-DEFINITION": {
+            "CATEGORY-UPDATED": "流程定义类别已更新"
+        },
+        "DEPLOYMENT": {
+            "DELETED-DEPLOYMENT": "已删除部署“{{name}}”",
+            "DELETE-ERROR": "无法删除部署。{{exception || ''}}"
+        },
+        "APP-DEPLOYMENT": {
+            "DELETED-APP": "已删除的应用程序'{{appDefinition.name}}'",
+            "DELETE-ERROR": "无法删除应用程序。{{message || ''}}"
+        }
+    },
+    "DECISION-TABLES": {
+        "TITLE": "决策表",
+        "LIST-MESSAGE": "显示{{total}}个匹配决策表中的{{size}}结果。",
+        "LIST-MESSAGE-EMPTY": "没有匹配的决策表",
+        "FILTER": {
+            "NAME": "名称",
+            "KEY": "键",
+            "TENANTID": "承租人标识符"
+        },
+        "SORT": {
+            "ID": "ID",
+            "NAME": "名称"
+        },
+        "HEADER": {
+            "ID": "ID",
+            "NAME": "名称",
+            "VERSION": "版本",
+            "KEY": "键",
+            "DEPLOY-TIME": "部署时间",
+            "TENANT-ID": "承租人 ID"
+        }
+    },
+    "DECISION-TABLE": {
+        "ID": "ID:",
+        "NAME": "名称:",
+        "VERSION": "版本:",
+        "KEY": "键:",
+        "DEPLOYMENT-ID": "部署 ID:",
+        "RESOURCE-NAME": "资源名称：",
+        "DESCRIPTION": "描述:",
+        "TENANT": "承租人:",
+        "TITLE": {
+            "DECISION-AUDITS": "决策审核"
+        },
+        "DECISION-AUDITS-MESSAGE": "此决策表包含{{total}}个审核，显示{{size}}。",
+        "DECISION-AUDITS-MESSAGE-EMPTY": "该决策表没有审核",
+        "ACTION": {
+            "EDIT-CATEGORY": "编辑类别",
+            "SHOW-ALL-JOBS": "显示所有工作",
+            "SHOW-ALL-PROCESSES": "显示所有流程",
+            "SHOW-DIAGRAM": "显示流程图",
+            "SHOW-DECISION-TABLE": "显示决策表"
+        },
+        "POPUP": {
+            "TITLE": "决策表： ",
+            "KEY": "键: ",
+            "HIT-POLICY": "点击策略： ",
+            "HIT-POLICIES": {
+                "FIRST": "第一次（单程）",
+                "ANY": "任何（单程）"
+            }
+        }
+    },
+    "FORMS": {
+        "TITLE": "表格",
+        "LIST-MESSAGE": "显示{{total}}个匹配表格中的{{size}}结果。",
+        "LIST-MESSAGE-EMPTY": "没有匹配的表格。",
+        "HEADER": {
+            "ID": "ID",
+            "NAME": "名称",
+            "APPID": "应用ID",
+            "TENANTID": "承租人 ID"
+        },
+        "FILTER": {
+            "NAME": "名称",
+            "APPID": "应用部署 ID",
+            "TENANTID": "承租人标识符"
+        },
+        "SORT": {
+            "ID": "ID",
+            "NAME": "名称"
+        }
+    },
+    "FORM": {
+        "ID": "ID:",
+        "NAME": "名称:",
+        "APP-ID": "应用ID:",
+        "DEPLOYMENT-ID": "部署ID:",
+        "DESCRIPTION": "描述:",
+        "TENANT": "承租人:",
+        "MESSAGE-EMPTY": "（没有）",
+        "TITLE": {
+            "SUBMITTED-FORMS": "提交表单"
+        },
+        "SUBMITTED-FORMS-MESSAGE": "此表单中有{{total}}个提交的表单，显示{{size}}。",
+        "SUBMITTED-FORMS-MESSAGE-EMPTY": "此表格没有提交表格",
+        "ACTION": {
+            "EDIT-CATEGORY": "编辑类别",
+            "SHOW-ALL-JOBS": "显示所有工作",
+            "SHOW-ALL-PROCESSES": "显示所有流程",
+            "SHOW-DIAGRAM": "显示流程图",
+            "SHOW-FORM": "显示表单"
+        },
+        "POPUP": {
+            "TITLE": "表单："
+        },
+        "FIELD-PREVIEW" : {
+            "DISPLAY-REF": "显示值",
+            "SELECT-FIELD": "（未选择字段）",
+            "FIELD-VALUE": "显示字段\"{{name}} \"的值",
+            "UNKNOWN-TYPE": "未知字段类型{{type}}",
+            "TEXT-VALUE": "文本",
+            "MULTI-TEXT-VALUE": "多行文字",
+            "NUMBER-VALUE": "123",
+            "DATE-VALUE": "日期",
+            "DROPDOWN-VALUE": "选择 ...",
+            "UPLOAD-VALUE": "上传或导入内容...",
+            "RADIOS-OPTION1": "选项1",
+            "SELECT-PERSON": "选择一个人",
+            "SELECT-GROUP": "选择一个组"
+        }
+    },
+    "SUBMITTED-FORM": {
+        "HEADER": {
+            "ID": "ID",
+            "TASK-ID": "任务ID",
+            "PROCESS-ID": "流程实例 ID",
+            "SUBMITTED": "提交",
+            "SUBMITTED-BY": "提交的",
+            "FORM-ID": "表单ID"
+        },
+        "ACTION": {
+            "SHOW-SUBMITTED-FORM": "显示提交的表单"
+        }
+    },
+    "APPS": {
+        "ACTION": {
+            "UPLOAD": "上传和发布应用程序",
+            "DOWNLOAD": "下载应用",
+            "REDEPLOY": "将应用重新部署到另一个集群",
+            "DELETE": "删除应用"
+        },
+        "POPUP": {
+            "DELETE": {
+                "CONFIRM-MESSAGE": "删除应用“{{appDefinition.name}}”？"
+            },
+            "UPLOAD": {
+                "DESCRIPTION": "选择一个.zip应用程序文件进行部署。",
+                "WARNING": "上传应用只能通过Activiti UI实例进行，而不能通过Activiti Core Engine实例进行。",
+                "DROPZONE": "或者在这里放置一个文件",
+                "NO-DROP": "您的浏览器不支持文件放置",
+                "CANCEL-UPLOAD": "取消上传",
+                "ERROR": "无法上传此文件"
+            },
+            "PUBLISH-MODEL": {
+                "TITLE": "发布应用模型",
+                "PUBLISH" : "发布",
+                "ERROR": "无法发布应用程序",
+                "DESCRIPTION": "选择一个.zip应用程序文件进行部署。",
+                "WARNING": "上传应用只能通过Activiti UI实例进行，而不能通过Activiti Core Engine实例进行。",
+                "DROPZONE": "或者在这里放置一个文件",
+                "NO-DROP": "您的浏览器不支持文件放置",
+                "LIST-MESSAGE": "显示总共{{total}}个匹配的应用模型。",
+                "LIST-MESSAGE-EMPTY": "没有匹配的应用模型.",
+                "PUBLISH-ERROR": "无法发布应用程序",
+                "EVERYONES-APPS": "显示每个人的应用",
+                "APP-CONFLICT-ERROR": "应用与由“{{createdBy.firstName}} {{createdBy.lastName}}”创建的现有应用“{{name}}”发生冲突",
+                "PUBLISH-TO-ANOTHER-CLUSTER": "将应用发布到其他集群",
+                "SELECT-CLUSTER": "选择集群",
+                "PUBLISH-TO-CLUSTER": "将应用发布到{{name}}",
+                "PUBLISH-AS-NEW-VERSION": "作为新的应用程序版本发布",
+                "HEADER": {
+                    "ID": "ID",
+                    "NAME": "名称",
+                    "LAST-UPDATE": "最后更新",
+                    "CREATED-BY": "创建的"
+                }
+            },
+            "REDEPLOY": {
+                "TITLE": "重新部署应用程序",
+                "DESCRIPTION": "选择一个集群重新部署'{{name}}'",
+                "ERROR": "无法部署应用程序",
+                "APP-CONFLICT-ERROR": "应用与由“{{createdBy.firstName}} {{createdBy.lastName}}”创建的现有应用“{{name}}”发生冲突",
+                "SELECT-CLUSTER": "选择集群",
+                "DEPLOY-TO-CLUSTER": "将应用部署到{{name}}",
+                "DEPLOY": "部署",
+                "DEPLOY-AS-NEW-VERSION": "部署为新的应用程序版本"
+            }
+        }
+    }
+}
