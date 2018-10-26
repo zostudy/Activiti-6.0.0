@@ -8,7 +8,6 @@ target
 .settings
 logs
 eclipse
-data
 .DS_Store
 *.bpmn/
 /userguide/src/en/index.html
